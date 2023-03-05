@@ -1,0 +1,196 @@
+<div class="container mt-2">
+  <div class="row">
+    <div class="col">
+      <h1>Update Contact</h1>
+    </div>
+  </div>
+</div>
+
+<!-- <pre>
+  {{ contact | json }}
+</pre> -->
+
+<div class="container">
+  <form #editContactForm="ngForm" action="">
+    <div class="row">
+      <div class="col-md-6">
+        <!-- <form> -->
+        <div class="edit-component">
+          <div class="form-floating">
+            <input
+              name="id"
+              #id="ngModel"
+              [(ngModel)]="contact.id"
+              type="text"
+              class="form-control"
+              id="floatingInput"
+              placeholder="ID"
+              required
+            />
+            <label for="floatingInput">ID</label>
+          </div>
+          <div *ngIf="id.invalid && id.touched" class="text-danger">
+            Invalid ID
+          </div>
+
+          <div class="form-floating">
+            <input
+              name="name"
+              #name="ngModel"
+              [(ngModel)]="contact.name"
+              type="text"
+              class="form-control"
+              id="floatingInput"
+              placeholder="Name"
+              required
+            />
+            <label for="floatingInput">Name</label>
+          </div>
+          <div *ngIf="name.invalid && name.touched" class="text-danger">
+            Invalid Name
+          </div>
+
+          <div class="form-floating">
+            <input
+              name="photo"
+              #photo="ngModel"
+              [(ngModel)]="contact.photo"
+              type="text"
+              class="form-control"
+              id="floatingInput"
+              #imgLink
+              placeholder="Photo Link"
+              required
+            />
+            <label for="floatingInput">Photo Link</label>
+            <!-- <button
+              type="button"
+              class="btn btn-success"
+              (click)="updateImage(imgLink)"
+            >
+              Add
+            </button> -->
+          </div>
+          <div *ngIf="photo.invalid && photo.touched" class="text-danger">
+            Invalid Photo
+          </div>
+
+          <div class="form-floating">
+            <input
+              name="email"
+              #email="ngModel"
+              [(ngModel)]="contact.email"
+              type="email"
+              class="form-control"
+              id="floatingInput"
+              placeholder="Email"
+              required
+            />
+            <label for="floatingInput">Email</label>
+          </div>
+          <div *ngIf="email.invalid && email.touched" class="text-danger">
+            Invalid Email
+          </div>
+
+          <div class="form-floating">
+            <input
+              name="mobile"
+              #mobile="ngModel"
+              [(ngModel)]="contact.mobile"
+              pattern="[0-9]*"
+              class="form-control"
+              id="floatingInput"
+              placeholder="Mobile Number"
+              minlength="10"
+              maxlength="10"
+              required
+            />
+            <label for="floatingInput">Mobile Number</label>
+          </div>
+          <div *ngIf="mobile.invalid && mobile.touched" class="text-danger">
+            Invalid Mobile number
+          </div>
+
+          <div class="form-floating">
+            <input
+              name="company"
+              #company="ngModel"
+              [(ngModel)]="contact.company"
+              type="text"
+              class="form-control"
+              id="floatingInput"
+              placeholder="Company"
+              required
+            />
+            <label for="floatingInput">Company</label>
+          </div>
+          <div *ngIf="company.invalid && company.touched" class="text-danger">
+            Invalid Company name
+          </div>
+
+          <div class="form-floating">
+            <input
+              name="title"
+              #title="ngModel"
+              [(ngModel)]="contact.title"
+              type="text"
+              class="form-control"
+              id="floatingInput"
+              placeholder="Title"
+              required
+            />
+            <label for="floatingInput">Title</label>
+          </div>
+          <div *ngIf="title.invalid && title.touched" class="text-danger">
+            Invalid Title
+          </div>
+
+          <div class="form-floating">
+            <select
+              name="groupId"
+              #groupId="ngModel"
+              [(ngModel)]="contact.groupId"
+              class="form-control"
+              placeholder="Group"
+              required
+            >
+              <option value="" selected hidden disabled>Choose a group</option>
+              <option [value]="group.id" *ngFor="let group of allGroups">
+                {{ group.name }}
+              </option>
+            </select>
+          </div>
+          <div *ngIf="groupId.invalid && groupId.touched" class="text-danger">
+            Select a Group
+          </div>
+        </div>
+
+        <!-- </form> -->
+      </div>
+      <div class="col-md-5">
+        <div class="container border" id="image_edit">
+          <img
+            alt="contact image"
+            class="img-fluid"
+            id="image_display"
+            [src]="contact.photo"
+          />
+        </div>
+      </div>
+      <div class="edit-final">
+        <button
+          [disabled]="editContactForm.invalid"
+          (click)="editContact(contact)"
+          type="button"
+          class="btn btn-success"
+          style="font-size: 1.2rem"
+        >
+          Update
+        </button>
+        <a class="btn btn-warning ms-4" style="font-size: 1.2rem" routerLink=""
+          >Close</a
+        >
+      </div>
+    </div>
+  </form>
+</div>

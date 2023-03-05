@@ -1,0 +1,8 @@
+#dp {
+  display: grid;
+  place-items: center;
+}
+#contact-details {
+  display: flex;
+  align-items: center;
+}

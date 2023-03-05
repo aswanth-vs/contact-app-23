@@ -1,0 +1,15 @@
+#image_edit {
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.edit-final {
+  display: flex;
+  justify-content: center;
+  margin-block: 18px;
+}
+
+.form-floating {
+  margin-block-end: 4px;
+}

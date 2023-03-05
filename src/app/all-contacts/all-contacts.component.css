@@ -1,0 +1,45 @@
+.heading {
+  display: grid;
+  grid-template-columns: 80% 1fr;
+  height: 40px;
+}
+
+.logo {
+  font-family: "Solway", serif;
+  display: flex;
+  justify-content: center;
+}
+
+.add-new {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 576px) {
+  #searchbox {
+    padding-inline: 70px;
+  }
+  #buttonbox {
+    display: flex;
+    justify-content: center;
+    margin-block: 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  #card-buttons {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
+  }
+}
+
+#contact-details {
+  display: flex;
+  align-items: center;
+}
+
+#dp {
+  display: grid;
+  place-items: center;
+}
